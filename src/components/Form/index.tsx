@@ -2,9 +2,15 @@ import Button from '../Button';
 import DropDown from '../DropDown';
 import TextField from '../TextField';
 import { useState } from 'react';
-import styles from './Form.module.css';
+import './Form.css';
+import { IEmployed } from '../../shared/interfaces/IEmployed';
 
-const Form = (props) => {
+interface FormProps {
+    onEmployedRegistered: (employed: IEmployed) => void
+    teams: string[]
+}
+
+const Form = (props: FormProps) => {
 
     const [ name, setName] = useState('');
     const [ role, setRole] = useState('');
@@ -12,7 +18,7 @@ const Form = (props) => {
     const [ team, setTeam] = useState('');
 
 
-    const onSave = (event) => {
+    const onSave = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         console.log('Form foi submetido => ', name, role, image, team)
         props.onEmployedRegistered({
@@ -29,7 +35,7 @@ const Form = (props) => {
     }
 
     return (
-        <section className={styles.form}>
+        <section className='form'>
             <form onSubmit={onSave}>
                 <h2>Preencha os dados para criar o card do colaborador</h2>
                 <TextField 
@@ -48,7 +54,7 @@ const Form = (props) => {
                 />
                 <TextField 
                     label='Imagem' 
-                    placeholder='Digite o dendereço da imagem'
+                    placeholder='Digite o endereço da imagem'
                     value={image}
                     onTyping={value => setImage(value)}
                 />

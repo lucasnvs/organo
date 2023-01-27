@@ -3,6 +3,7 @@ import Banner from './components/Banner';
 import Footer from './components/Footer';
 import Form from './components/Form';
 import Team from './components/Team';
+import { IEmployed } from './shared/interfaces/IEmployed';
 
 function App() {
 
@@ -16,19 +17,20 @@ function App() {
     { name: 'Inovação e Gestão', primaryColor: '#FF8A29', secondaryColor: '#FFEEDF' }
   ]
 
-  const [employeds, setEmployeds] = useState([]);
+  const [employeds, setEmployeds] = useState<IEmployed[]>([]);
 
-  const onNewEmployedAdd = (employed) => {
+  const onNewEmployedAdd = (employed: IEmployed) => {
     console.log(employed)
-    setEmployeds([...employeds, employed]);
+    setEmployeds([...employeds, employed])
   }
 
   return (
     <div className="App">
-      <Banner />
+      <Banner imageAddress='/images/banner.png'/>
       <Form teams={teams.map( team => team.name )} onEmployedRegistered={employed => onNewEmployedAdd(employed)} />
 
-      {teams.map(team => <Team 
+      {teams.map(team => 
+      <Team 
         key={team.name} 
         name={team.name} 
         primaryColor={team.primaryColor} 

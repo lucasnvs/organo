@@ -1,8 +1,16 @@
-import styles from './DropDown.module.css';
+import './DropDown.css';
 
-const DropDown = (props) => {
+interface DropDownProps {
+    label: string
+    value: string
+    onTyping: (value: string) => void
+    required: boolean
+    itens: string[]
+}
+
+const DropDown = (props: DropDownProps) => {
     return (
-        <div className={styles.DropDown}>
+        <div className='DropDown'>
             <label>{props.label}</label>
             <select
                 value={props.value}
