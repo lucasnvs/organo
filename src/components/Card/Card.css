@@ -14,7 +14,7 @@
     bottom: -50px;
 }
 
-.card .footer {
+.card .cardFooter {
     background: #FFFFFF;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.08);
     border-radius: 0px 0px 10px 10px;
@@ -22,7 +22,7 @@
     padding-bottom: 40px;
 }
 
-.card .footer h4 {
+.card .cardFooter h4 {
     color: #6278F7;
     font-size: 18px;
     line-height: 22px;
@@ -30,7 +30,7 @@
     margin-bottom: 8px;
 }
 
-.card .footer h5 {
+.card .cardFooter h5 {
     font-size: 18px;
     line-height: 22px;
     color: #212121;

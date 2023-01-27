@@ -23,6 +23,7 @@ const Team = (props: TeamProps) => {
                     name={employed.name} 
                     role={employed.role} 
                     image={employed.image}
+                    date={employed.date}
                 />)}
             </div>
         </section>

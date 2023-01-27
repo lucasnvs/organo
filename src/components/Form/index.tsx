@@ -16,6 +16,7 @@ const Form = (props: FormProps) => {
     const [ role, setRole] = useState('');
     const [ image, setImage] = useState('');
     const [ team, setTeam] = useState('');
+    const [ date, setDate] = useState('');
 
 
     const onSave = (event: React.FormEvent<HTMLFormElement>) => {
@@ -25,7 +26,8 @@ const Form = (props: FormProps) => {
             name,
             role,
             image,
-            team
+            team,
+            date
         })
 
         setName('');
@@ -57,6 +59,13 @@ const Form = (props: FormProps) => {
                     placeholder='Digite o endereço da imagem'
                     value={image}
                     onTyping={value => setImage(value)}
+                />
+                <TextField 
+                    label='Data de entrada no time'
+                    placeholder=''
+                    value={date}
+                    onTyping={value => setDate(value)}
+                    type='date'
                 />
                 <DropDown 
                     required={true} 

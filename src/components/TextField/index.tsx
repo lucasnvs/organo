@@ -6,14 +6,16 @@ interface TextFieldProps {
     label: string
     value: string
     required?: boolean
+    type?: 'text' | 'password' | 'date' | 'email' | 'number'
 }
 
-const TextField = ({ onTyping, placeholder, label, value, required = false }: TextFieldProps) => {
+const TextField = ({ onTyping, placeholder, label, value, required = false, type = 'text' }: TextFieldProps) => {
 
     return (
         <div className='textField'>
             <label>{label}</label>
-            <input 
+            <input
+                    type={type}
                     value={value} 
                     onChange={ event => onTyping(event.target.value)} 
                     required={required} 
